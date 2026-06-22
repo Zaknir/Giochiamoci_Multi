@@ -47,7 +47,7 @@ class HeaderSito extends HTMLElement {
                 <summary>Progetta Accessibile</summary>
                 <ul id="progetta-accessibile">
                     <li><a href="03_01_accessibile.html">Capire l'accessibilità</a></li>
-                    <li><a href="03_02_videogiochi.html">Progettare videogiochi</a></li>
+                    <li><a href="03_02_videogioco.html">Progettare videogiochi</a></li>
                     <li><a href="03_03_acc_tavolo.html">Progettare giochi da tavolo</a></li>    
                 </ul>
             </details>
