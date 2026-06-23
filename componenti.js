@@ -1,14 +1,33 @@
+// ==========================================
+// CONTROLLO AGGIORNAMENTO AUTOMATICO (CACHE)
+// ==========================================
+// Incrementa questo numero (es. '1.1', '1.2') quando modifichi i testi sotto.
+// Forzerà i dispositivi (inclusi iPhone) a scaricare la nuova versione.
+const VERSIONE_ATTUALE = '1.1'; 
+
+function controllaVersioneComponente() {
+  const versioneSalvata = localStorage.getItem('versione_componenti_sito');
+  if (versioneSalvata !== VERSIONE_ATTUALE) {
+    localStorage.setItem('versione_componenti_sito', VERSIONE_ATTUALE);
+    window.location.reload(); 
+  }
+}
+controllaVersioneComponente();
+
+
+// ==========================================
+// DEFINIZIONE COMPONENTI
+// ==========================================
+
 // Definizione dell'Header (Titolo + Navigazione)
 class HeaderSito extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-<header>
-        <!-- Contenitore principale per affiancare Logo e Testi -->
+    <header>
         <div class="header-main-box">
             
             <img src="logo_defcolori-sito.png" alt="Logo dell'associazione Giochiamoci! Un'illustrazione in stile fumetto con toni pastello che mostra due mani viola aperte verso l'alto per sorreggere diversi elementi ludici: un controller per videogiochi verde chiaro, carte da gioco gialle, un lucchetto azzurro con una chiave infilata (simbolo di escape room), un dado a venti facce rosa per giochi di ruolo e schede di gioco. In basso, la scritta in stampatello maiuscolo scuro 'GIOCHIAMOCI!'." class="logo">
             
-            <!-- Sotto-oggetto verticale per i testi -->
             <div class="testi-header">
                 <h1>Giochiamoci! APS</h1>
                 <p class="motto">Perché anche giocare è un diritto di tutte!</p>
@@ -16,12 +35,10 @@ class HeaderSito extends HTMLElement {
     
         </div>
 
-        <!-- **QUESTO E' IL MENU DI NAVIGAZIONE** -->
         <nav>
             <div class="home-link-box">
                 <a href="index.html" id="home-link">Home</a>
             </div>
-            <!-- SEZIONE: MENU PRINCIPALE -->
             <details>
                 <summary>Chi siamo</summary>
                 <ul class="menu-principale">
@@ -32,7 +49,6 @@ class HeaderSito extends HTMLElement {
                 </ul>
             </details>
         
-            <!-- SEZIONE: GIOCA CON NOI -->
             <details>
                 <summary>Gioca con noi</summary>
                 <ul id="gioca-con-noi">
@@ -42,7 +58,6 @@ class HeaderSito extends HTMLElement {
                 </ul>
             </details>
         
-            <!-- SEZIONE: PROGETTA ACCESSIBILE -->
             <details>
                 <summary>Progetta Accessibile</summary>
                 <ul id="progetta-accessibile">
