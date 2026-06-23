@@ -63,7 +63,7 @@ class FooterSito extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <footer class="site-footer">
-            <p><b>&copy; 2026 ASSOCIAZIONE GIOCHIAMOCI! APS</b></p>
+            <h2>2026 ASSOCIAZIONE GIOCHIAMOCI! APS</h2>
             <ul>
                 <li><b>Tutti i diritti riservati.</b></li>
                 <li><b>Sede legale:</b> Via Federico de Roberto 5, 20152 Milano (MI)</li>
